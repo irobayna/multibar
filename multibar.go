@@ -51,7 +51,8 @@ func New() (*BarContainer, error) {
     	}
     	width, lines := termbox.Size()
     	termbox.Close()
-	_, line, _ := curse.GetCursorPosition()
+	//_, line, _ := curse.GetCursorPosition()
+	_, line, _ := 0
 
 	history := make(map[int]string)
 
