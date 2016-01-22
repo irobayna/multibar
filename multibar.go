@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sethgrid/curse"
+	//"github.com/sethgrid/curse"
 )
 
 type progressFunc func(progress int)
