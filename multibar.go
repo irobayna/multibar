@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 	"time"
-
+	"github.com/nsf/termbox-go"
 	//"github.com/sethgrid/curse"
 )
 
@@ -45,7 +45,12 @@ type ProgressBar struct {
 
 func New() (*BarContainer, error) {
 	// can swallow err because sensible defaults are returned from curse
-	width, lines, _ := curse.GetScreenDimensions()
+	//width, lines, _ := curse.GetScreenDimensions()
+	if err := termbox.Init(); err != nil {
+        	panic(err)
+    	}
+    	width, lines := termbox.Size()
+    	termbox.Close()
 	_, line, _ := curse.GetCursorPosition()
 
 	history := make(map[int]string)
